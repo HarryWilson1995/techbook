@@ -1,0 +1,19 @@
+{
+  "name": "techbook",
+  "version": "1.0.0",
+  "description": "Social media platform for tech professionals",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HarryWilson1995/techbook.git"
+  },
+  "author": "Harry Wilson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HarryWilson1995/techbook/issues"
+  },
+  "homepage": "https://github.com/HarryWilson1995/techbook#readme"
+}
