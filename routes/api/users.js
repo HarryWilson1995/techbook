@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const gravatar = require('gravatar');
+const bcrypt = require('bcryptjs');
 const { check, validationResult } = require('express-validator');
 const User = require('../../models/User');
 
@@ -45,6 +46,15 @@ router.post(
         password,
         avatar,
       });
+
+      const salt = await bcrypt.genSalt(10);
+
+      user.password = await bcrypt.hash(password, salt);
+
+      await user.save();
+
+      // Return JSONWebToken after this
+      res.send('User Registered');
     } catch (err) {
       console.error(err.message);
       res.status(500).send('Server Error');
