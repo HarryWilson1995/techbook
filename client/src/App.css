@@ -580,3 +580,7 @@ button {
 .p-r-1 {
   padding-right: 1rem;
 }
+
+.p-r-half {
+  padding-right: 0.5rem;
+}
