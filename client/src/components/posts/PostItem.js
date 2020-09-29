@@ -42,11 +42,11 @@ const PostItem = ({
           <i className='fas fa-thumbs-down' />
         </button>
         {/* <Link to={`/posts/${_id}`} className='btn btn-primary'>
-            Discussion{' '}
-            {comments.length > 0 && (
-              <span className='comment-count'>{comments.length}</span>
-            )}
-          </Link> */}
+          Discussion{' '}
+          {comments.length > 0 && (
+            <span className='comment-count'>{comments.length}</span>
+          )}
+        </Link> */}
         {!auth.loading && user === auth.user._id && (
           <button
             onClick={() => deletePost(_id)}
