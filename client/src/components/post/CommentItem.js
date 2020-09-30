@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -20,18 +20,20 @@ const CommentItem = ({
     </div>
     <div>
       <p className='my-1'>{text}</p>
-      <p className='post-date'>
-        Posted on <Moment format='YYYY/MM/DD'>{date}</Moment>
-      </p>
-      {!auth.loading && user === auth.user._id && (
-        <button
-          onClick={() => deleteComment(postId, _id)}
-          type='button'
-          className='btn btn-danger'
-        >
-          <i className='fas fa-trash-alt' />
-        </button>
-      )}
+      <Fragment>
+        <p className='post-date p-r-half' style={{ display: 'inline' }}>
+          Posted on <Moment format='YYYY/MM/DD'>{date}</Moment>
+        </p>
+        {!auth.loading && user === auth.user._id && (
+          <button
+            onClick={() => deleteComment(postId, _id)}
+            type='button'
+            className='btn btn-danger'
+          >
+            <i className='fas fa-trash-alt' />
+          </button>
+        )}
+      </Fragment>
     </div>
   </div>
 );
